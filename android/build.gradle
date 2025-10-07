@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.4.1'
+        classpath 'com.android.tools.build:gradle:8.5.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -26,7 +26,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 34
+    compileSdk 35
+    ndkVersion = "28.1.13356709"
     namespace project.group
 
     compileOptions {
@@ -38,10 +39,10 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
-        minSdk 17
+        minSdk 22
     }
 }
 
 dependencies {
-    implementation 'com.github.scottyab:rootbeer:0.1.0'
+    implementation 'com.scottyab:rootbeer-lib:0.1.1'
 }
